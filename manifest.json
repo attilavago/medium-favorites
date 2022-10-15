@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Medium Favorite Authors",
+  "version": "1.0.0",
+  "description": "Save your favorite authors to a list for quick access.",
+  "icons": {
+    "16": "medium.png",
+    "48": "medium.png",
+    "128": "medium.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "medium.png",
+      "24": "medium.png",
+      "32": "medium.png"
+    },
+    "default_title": "Add authors...",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage","activeTab","declarativeContent", "contextMenus"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.medium.com/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
