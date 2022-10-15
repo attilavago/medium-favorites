@@ -5,6 +5,17 @@ chrome.runtime.onInstalled.addListener((details) => {
         contexts: ["page", "selection", "image", "link"]
     });
 
+    let authorImage;
+    let authorName;
+
+    chrome.runtime.onMessage.addListener(
+        function(request, sender, sendResponse) {
+            if (request.authorImage !== "" && request.authorName !== "")
+                authorImage = request.authorImage;
+                authorName = request.authorName;
+        }
+    );
+
     let authorsList;
 
     chrome.storage.sync.set({
@@ -17,7 +28,7 @@ chrome.runtime.onInstalled.addListener((details) => {
     chrome.contextMenus.onClicked.addListener((event) => {
         console.log(event);
         console.log(authorsList);
-        authorsList.push({name: event.selectionText, url: event.linkUrl})
+        authorsList.push({name: authorName, url: event.linkUrl, profileImg: authorImage})
         chrome.storage.sync.set({
             authors: authorsList
         }, () => {
