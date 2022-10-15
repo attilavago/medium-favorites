@@ -3,5 +3,5 @@ console.log("hello from Medium");
 
 
 document.addEventListener("contextmenu", function(e) {
-    console.log("You clicked this element:", e.target);
+    console.log("You clicked this element:", e.target.parentNode.querySelectorAll('img')[0].currentSrc);
 });
