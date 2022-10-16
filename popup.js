@@ -5,6 +5,8 @@ const addToAuthors = (author) => {
     let link = document.createElement('a');
     let image = document.createElement('img');
     let authorName = document.createElement('p');
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = "Delete";
     image.src = author.profileImg;
     image.alt = author.name;
     authorName.textContent = author.name;
@@ -14,6 +16,7 @@ const addToAuthors = (author) => {
     link.appendChild(image);
     link.appendChild(authorName);
     li.appendChild(link);
+    li.appendChild(deleteButton);
     authorsListElement.appendChild(li);
 }
 
