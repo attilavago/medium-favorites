@@ -33,6 +33,17 @@ ul > li {
     grid-template-columns: calc(100% - 60px) 60px;
 }
 
+ul > li > button {
+    border-radius: 100%;
+    border: 1px solid darkred;
+    width: 30px;
+    height: 30px;
+    color: darkred;
+    align-self: center;
+    justify-self: end;
+    background: white;
+}
+
 ul > li > a {
     display: grid;
     grid-template-columns: 60px auto;

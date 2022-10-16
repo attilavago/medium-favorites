@@ -6,7 +6,7 @@ const addToAuthors = (author) => {
     let image = document.createElement('img');
     let authorName = document.createElement('p');
     let deleteButton = document.createElement('button');
-    deleteButton.textContent = "Delete";
+    deleteButton.textContent = "—";
     deleteButton.addEventListener('click', function(event){
             authorIndexSearchText = event.target.parentNode.querySelector('p').textContent;
             chrome.storage.sync.get(["authors"], (result) => {
