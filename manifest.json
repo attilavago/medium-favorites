@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Medium Favorite Writers",
   "version": "1.0.0",
-  "description": "Save your favorite authors to a list for quick access.",
+  "description": "Save your favorite Medium writers to an easy to access list.",
   "icons": {
     "16": "Medium_Favorites_Logo.png",
     "48": "Medium_Favorites_Logo.png",
