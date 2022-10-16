@@ -22,20 +22,25 @@ chrome.runtime.onInstalled.addListener((details) => {
         authors: []
     });
     chrome.storage.sync.get(["authors"], (result) => {
-        console.log(result);
+        console.log(result.authors);
         authorsList = result.authors;
     })
     chrome.contextMenus.onClicked.addListener((event) => {
         console.log(event);
         console.log(authorsList);
-        authorsList.push({name: authorName, url: event.linkUrl, profileImg: authorImage})
-        chrome.storage.sync.set({
-            authors: authorsList
-        }, () => {
-            chrome.storage.sync.get(["authors"], (result) => {
-                console.log(result);
+        chrome.storage.sync.get(["authors"], (result) => {
+            console.log(result.authors);
+            authorsList = result.authors;
+            authorsList.push({name: authorName, url: event.linkUrl, profileImg: authorImage})
+            chrome.storage.sync.set({
+                authors: authorsList
+            }, () => {
+                chrome.storage.sync.get(["authors"], (result) => {
+                    console.log(result);
+                })
             })
         })
+
     })
 })
 

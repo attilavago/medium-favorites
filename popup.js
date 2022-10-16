@@ -7,6 +7,20 @@ const addToAuthors = (author) => {
     let authorName = document.createElement('p');
     let deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";
+    deleteButton.addEventListener('click', function(event){
+            authorIndexSearchText = event.target.parentNode.querySelector('p').textContent;
+            chrome.storage.sync.get(["authors"], (result) => {
+                console.log(result);
+                const authorIndex = result.authors.findIndex((author) => author.name == authorIndexSearchText)
+                console.log(authorIndex);
+                result.authors.splice(authorIndex, 1);
+                chrome.storage.sync.set({
+                    authors: result.authors
+                }, () => {
+                    event.target.parentNode.remove();
+                });
+            })
+        }, false);
     image.src = author.profileImg;
     image.alt = author.name;
     authorName.textContent = author.name;
