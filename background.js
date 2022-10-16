@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener((details) => {
     chrome.contextMenus.create({
-        title: "Add Author To Medium Favorites",
+        title: "Add writer to Medium Favorite Writers",
         id: "add_author_context",
         contexts: ["page", "selection", "image", "link"]
     });

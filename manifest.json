@@ -1,18 +1,18 @@
 {
   "manifest_version": 3,
-  "name": "Medium Favorite Authors",
+  "name": "Medium Favorite Writers",
   "version": "1.0.0",
   "description": "Save your favorite authors to a list for quick access.",
   "icons": {
-    "16": "medium.png",
-    "48": "medium.png",
-    "128": "medium.png"
+    "16": "Medium_Favorites_Logo.png",
+    "48": "Medium_Favorites_Logo.png",
+    "128": "Medium_Favorites_Logo.png"
   },
   "action": {
     "default_icon": {
-      "16": "medium.png",
-      "24": "medium.png",
-      "32": "medium.png"
+      "16": "Medium_Favorites_Logo.png",
+      "24": "Medium_Favorites_Logo.png",
+      "32": "Medium_Favorites_Logo.png"
     },
     "default_title": "Add authors...",
     "default_popup": "popup.html"

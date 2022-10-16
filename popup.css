@@ -1,9 +1,10 @@
 body {
     width: 400px;
-    height: 550px;
+    height: 570px;
     padding: 20px;
     box-sizing: border-box;
     padding-top: 0;
+    overflow-y: hidden;
 }
 
 header > h1 {
@@ -20,7 +21,7 @@ ul {
     display: grid;
     list-style-type: none;
     padding: 0;
-    height: 400px;
+    height: 380px;
     overflow-y: scroll;
     margin-bottom: 0;
     align-content: baseline;
@@ -68,11 +69,25 @@ footer {
 }
 
 footer > a {
-    background: #03A87C;
     color: white;
     font-size: 14px;
     font-weight: 600;
     padding: 7px 14px;
     border-radius: 5px;
     text-decoration: none;
+    display: inline-block;
+    margin-bottom: 7px;
+    margin-right: 5px;
+}
+
+.kofi {
+    background: #ff5f5f;
+}
+
+.medium {
+    background: #03A87C;
+}
+
+.twitter {
+    background: #1D9BF0FF;
 }
